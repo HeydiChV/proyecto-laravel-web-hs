@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 
 
-class PersonaController extends Controller
+class ProductoController extends Controller
 {
     public function listarProducto(){
         try{
@@ -17,65 +17,82 @@ class PersonaController extends Controller
             alert()->error('Post Created',$ex->getMessage())->toToast();
         }
     
-        $personas = [
+        $productos = [
             [
-                "personaID" => "1",
-                "nombres" => "Sebastian",
-                "paterno" => "Fernandez",
-                "materno" => "Figueroa",
-                "bibliografia" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-                "foto" => "https://img.freepik.com/fotos-premium/rana-divertida_183364-4475.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1697932800&semt=ais",
-                "documento" => "65235897",
-                "celular" => "943546487",
+                "productoID" => "1",
+               "nombre" => "oufits",
+               "marca" => "A",
+               "categoria" => "ropa y moda",
+               "descripcion" => "Esta categoría abarca todo lo relacionado con la indumentaria y la moda. Puede incluir ropa para mujeres, hombres, niños y bebés, así como calzado y accesorios de moda como bolsos, cinturones, bufandas, sombreros y gafas de sol. Es un mercado amplio y diverso donde la tendencia y el estilo juegan un papel importante.",
+               "imagen" => "https://thehappening.com/wp-content/uploads/2021/07/sabrina-44.jpg",
+               "precio" => "500",
+               "stock" => "150",
+               "fechaRegistro" => "2023-10-27",
             ],
+        
             [
-                "personaID" => "2",
-                "nombres" => "Milagros",
-                "paterno" => "Chaina",
-                "materno" => "Velasquez",
-                "bibliografia" => " Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, comes from a line in section 1.10.32. ",
-                "foto" => "https://cloudfront-us-east-1.images.arcpublishing.com/semana/JWYU7BYMDNGKBMYPCOLVFUX4M4.png",
-                "documento" => "65235797",
-                "celular" => "943546477",
+               "productoID" => "2",
+               "nombre" => "la toxica",
+               "marca" => "A",
+               "categoria" => "alimentos y bebidas",
+               "descripcion" => "En esta categoría se encuentran todos los productos relacionados con la alimentación y las bebidas. Esto incluye alimentos frescos como frutas y verduras, carnes, pescados, así como productos enlatados y envasados. También abarca una variedad de bebidas, desde agua y refrescos hasta bebidas alcohólicas como vinos y cervezas.",
+               "imagen" => "https://gestion.pe/resizer/i5vGkdDtf5Hm87rWfJgyCvkwEyI=/1200x900/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/IOUUSANWTNDP7G3IJPGGO6NZOI.jpg",
+               "precio" => "15",
+               "stock" => "50",
+               "fechaRegistro" => "2023-12-13",
+        
             ],
+        
             [
-                "personaID" => "3",
-                "nombres" => "Daniel",
-                "paterno" => "Velasquez",
-                "materno" => "Figueroa",
-                "bibliografia" => "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-                "foto" => "https://img.freepik.com/fotos-premium/gecko-casco-casco_777271-7315.jpg",
-                "documento" => "64235897",
-                "celular" => "943596487",
+               "productoID" => "3",
+               "nombre" => "muebles",
+               "marca" => "A",
+               "categoria" => "hogar y jardin",
+               "descripcion" => "Esta categoría se centra en productos para el hogar y la decoración. Incluye muebles para el hogar, decoración de interiores, electrodomésticos de cocina, productos para el baño y elementos relacionados con el jardín, como muebles de jardín, herramientas de jardinería y plantas.",
+               "imagen" => "https://colineal.pe/cdn/shop/articles/555559551037_600x600_crop_center.jpg?v=1666721828",
+               "precio" => "200",
+               "stock" => "100",
+               "fechaRegistro" => "2023-11-08",
             ],
+        
             [
-                "personaID" => "4",
-                "nombres" => "Wilder",
-                "paterno" => "Acurio",
-                "materno" => "Gomez",
-                "bibliografia" => "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-                "foto" => "https://img.freepik.com/fotos-premium/dinosaurio-azul-casco-lapiz-leyendo-libro_593294-4731.jpg",
-                "documento" => "65237797",
-                "celular" => "943547487",
+               "productoID" => "4",
+               "nombre" => "diccionarios",
+               "marca" => "A",
+               "categoria" => "Libros",
+               "descripcion" => "Esta categoría se enfoca en literatura, entretenimiento y medios. Incluye libros de ficción y no ficción en diversos géneros, películas, música en diferentes formatos, videojuegos, revistas y cómics. Los medios son una fuente de entretenimiento y conocimiento para muchas personas.",
+               "imagen" => "https://www.asale.org/sites/default/files/styles/noticia_grande/public/imagenes/articulos/Diccionarios_DSC1992.jpg?h=c9f93661&itok=TC0X0oHB",
+               "precio" => "60",
+               "stock" => "200",
+               "fechaRegistro" => "2023-10-03",
             ],
+        
             [
-                "personaID" => "5",
-                "nombres" => "Nayes",
-                "paterno" => "Altamirano",
-                "materno" => "Zea",
-                "bibliografia" => "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-                "foto" => "https://cloudfront-us-east-1.images.arcpublishing.com/semana/KVRYJNDM6FGKPGL6WXPO26HFUA.png",
-                "documento" => "64835897",
-                "celular" => "948546487",
-            ],
-        ];
+               "productoID" => "5",
+               "nombre" => "perfumes",
+               "marca" => "A",
+               "categoria" => "Salud y belleza",
+               "descripcion" => "La categoría de Salud y Belleza engloba una amplia gama de productos relacionados con el cuidado personal y el bienestar. Incluye productos para el cuidado del cabello, como champús, acondicionadores y tratamientos capilares. También abarca productos para el cuidado de la piel, como cremas hidratantes, protectores solares y productos antienvejecimiento. Además, esta categoría engloba suplementos dietéticos y productos relacionados con la salud, como vitaminas y minerales. En el ámbito de la belleza, se encuentran productos de maquillaje, como bases, labiales y sombras de ojos, así como equipos de ejercicio en casa, como pesas y máquinas de entrenamiento. La salud y la belleza son aspectos importantes en la vida de muchas personas, y esta categoría ofrece una amplia gama de productos para ayudar a las personas a cuidar de sí mismas y sentirse mejor tanto por dentro como por fuera.",
+               "imagen" => "https://media.vogue.es/photos/61ed2ff6dd52dacaa3c9fd5f/3:2/w_1600%2Cc_limit/Bodegon_Vogue_4_202.jpg",
+               "precio" => "150",
+               "stock" => "200",
+               "fechaRegistro" => "2023-12-01",
+            ]
+        
+            ];
     
-        //dd($personas);
-        return view('lista-personas', compact('personas'));
+        //dd($productos);
+        return view('lista-productos', compact('productos'));
     }
 
-    public function mostrarPersona(Request $request, $id_persona){
-        dd($id_persona, $request);
+    public function mostrarProducto(Request $request, $id_producto){
+        dd($id_producto, $request);
+        
+    }
+
+    public function detalleProducto(Request $request, $id_producto){
+        //dd( $request);
+        return view('mostrar-producto', compact('id_producto'));
         
     }
 }

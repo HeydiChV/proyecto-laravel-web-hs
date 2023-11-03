@@ -14,7 +14,7 @@
         <h1>Lista Productos</h1>
         <p>Ofrecen gran variedad de productos que solo ellos traen. Así que si un cliente desea ese determinado producto. Crear un buen clima laboral. Bonificaciones a los empleados, reuniones constantes, premios al mejor trabajador.</p>
         @foreach($productos as $producto)
-        <p>{{$producto['nombres'] }} // {{$producto['marca'] }} // {{$producto['categoria'] }} </p>
+        <p>{{$producto['nombre'] }} // {{$producto['marca'] }} // {{$producto['categoria'] }} </p>
 
 
         @endforeach
@@ -38,7 +38,7 @@
                 @foreach($productos as $producto)
                 <tr>
                     <th scope="row">1</th>
-                    <td>{{$producto['nombres'] }}</td>
+                    <td>{{$producto['nombre'] }}</td>
                     <td>{{$producto['marca'] }}</td>
                     <td>{{$producto['categoria'] }}</td>
                     <td>{{$producto['descripcion'] }}</td>

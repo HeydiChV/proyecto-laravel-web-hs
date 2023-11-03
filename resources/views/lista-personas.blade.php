@@ -43,7 +43,7 @@
                     <td>{{$persona['celular'] }}</td>
                     <td style="text-align:center"><img style="height:55px;" src="{{$persona['foto'] }}" alt="Foto de persona"></td>
                     <td class="" style="text-align:center">
-                        <a href="{{ route('mostrar-personas', $persona['personaID']) }}" type="button" class="btn btn-success">Detalles</a>
+                        <a href="{{ route('mostrar-persona', $persona['personaID']) }}" type="button" class="btn-success">Detalles</a>
                         <a type="button" class="btn btn-primary">Editar</a>
                         <a type="button" class="btn btn-danger">Eliminar</a>
                     
