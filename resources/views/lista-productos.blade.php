@@ -47,14 +47,13 @@
                     <td>{{$producto['stock'] }}</td>
                     <td>{{$producto['fechaRegistro'] }}</td>
                     <td class="" style="text-align:center">
-                        <button type="button" class="btn btn-success">Detalles</button>
-                        <button type="button" class="btn btn-primary">Editar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        <a href="{{ route('mostrar-producto', $producto['productoID']) }}" type="button" class="btn btn-success">Detalles</a>
+                        <a type="button" class="btn btn-primary">Editar</a>
+                        <a type="button" class="btn btn-danger">Eliminar</a>
                     
                     </td>
                 </tr>
                 @endforeach
-
 
             </tbody>
         </table>
