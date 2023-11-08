@@ -7,6 +7,8 @@ use App\Http\Controllers;
 
 use App\Http\Controllers\PaginaWebController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\RegistroPersonaWebController;
+use App\Http\Controllers\RegistroProductoWebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,4 +58,11 @@ Route::get('/lista-productos/{id_producto}',
  [PaginaWebcontroller::class ,'verPaginaWeb']
  )->name('pagina-web');
  
+ Route::get('/pagina-web/registro-persona', 
+ [RegistroPersonaWebController::class ,'registroPersona']
+ )->name('registro.persona');
+ 
+ Route::get('/pagina-web/registro-producto', 
+ [RegistroProductoWebController::class ,'registroProducto']
+ )->name('registro.producto');
  
