@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Persona;
 use Exception;
 
+
 class RegistroPersonaWebController extends Controller
 {
     public function registroPersona(){

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Exception;
 use App\Models\Persona;
 
+
 class PersonaController extends Controller
 
 {
@@ -14,7 +15,7 @@ class PersonaController extends Controller
    public function listarPersona(){
     $mensaje = session('mensaje');
     if($mensaje){
-      //alert()->success('Exitoso')->toToast();
+      //sweet::alert()->success('Exitoso')->toToast();
     }
      $personas = Persona::all();
      //alert()->success('Exitoso')->toToast();
