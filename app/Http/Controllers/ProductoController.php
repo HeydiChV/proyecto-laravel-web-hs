@@ -10,7 +10,7 @@ class ProductoController extends Controller
 {
    //Código para hacer conexion con la base de datos creada, especificamente con la tabla productos
    public function listarProducto(){
-     alert()->success('Exitoso')->toToast();
+     //alert()->success('Exitoso')->toToast();
      $productos = Producto::all();
      return view('lista-productos', compact('productos'));  
   }

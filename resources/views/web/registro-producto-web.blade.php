@@ -16,24 +16,53 @@
 			<div class="container">
 				<div class="flex-w flex-tr">
 					<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-						<form>
-							<h4 class="mtext-105 cl2 txt-center p-b-30">
-								Send Us A Message
-							</h4>
-	
-							<div class="bor8 m-b-20 how-pos4-parent">
-								<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Your Email Address">
-								<img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
+						<form action="{{ route('guardar.producto') }}" method="POST" enctype="multipart/form-data">
+							@csrf
+							<div class="mb-3">
+							  <label for="exampleInputEmail1" class="form-label">Nombre</label>
+							  <input type="text" class="form-control" name="nombre" id="exampleInputEmail1" aria-describedby="Nombres">
 							</div>
-	
-							<div class="bor8 m-b-30">
-								<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="How Can We Help?"></textarea>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Marca</label>
+								<input type="text" class="form-control" name="marca" id="exampleInputEmail1" aria-describedby="Apellido Paterno">
+							  </div>
+							  <div class="mb-3">
+								<label for="categories" class="form-label">Categorias</label>
+								<select class="form-select" name="categoria" aria-label="Default select example">
+									<option selected>Seleccione uno</option>
+									<option value="1">Carnes</option>
+									<option value="2">Verduras</option>
+									<option value="3">Frutas</option>
+								  </select>
+							  </div>
+							  <div class="mb-3">
+								<label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+								<textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
+							  </div>
+							  <div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Imagen</label>
+								<input type="file" class="form-control" name="imagen" id="exampleInputEmail1" aria-describedby="Foto">
+							  </div>
+							  <div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Precio</label>
+								<input type="text" class="form-control" name="precio" id="exampleInputEmail1" aria-describedby="Número de documento">
+							  </div>
+							  <div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Stock</label>
+								<input type="text" class="form-control" name="stock" id="exampleInputEmail1" aria-describedby="Número de celular">
+							  </div>
+							  <div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Fecha de registro</label>
+								<input type="date" class="form-control" name="fechaRegistro" id="exampleInputEmail1" aria-describedby="Número de documento">
+							  </div>
+							  
+							 
+							<div class="mb-3 form-check">
+							  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+							  <label class="form-check-label" for="exampleCheck1">Check me out</label>
 							</div>
-	
-							<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-								Submit
-							</button>
-						</form>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						  </form>
 					</div>
 	
 					<div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">

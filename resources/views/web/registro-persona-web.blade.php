@@ -16,24 +16,52 @@
 			<div class="container">
 				<div class="flex-w flex-tr">
 					<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-						<form>
-							<h4 class="mtext-105 cl2 txt-center p-b-30">
-								Send Us A Message
-							</h4>
-	
-							<div class="bor8 m-b-20 how-pos4-parent">
-								<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Your Email Address">
-								<img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
+						<form action="{{ route('guardar.persona') }}" method="POST" enctype="multipart/form-data">
+							@csrf
+							<div class="mb-3">
+							  <label for="exampleInputEmail1" class="form-label">Nombres</label>
+							  <input type="text" class="form-control" name="nombres" id="exampleInputEmail1" aria-describedby="Nombres">
 							</div>
-	
-							<div class="bor8 m-b-30">
-								<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="How Can We Help?"></textarea>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Apellido Paterno</label>
+								<input type="text" class="form-control" name="paterno" id="exampleInputEmail1" aria-describedby="Apellido Paterno">
+							  </div>
+							  <div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Apellido Materno</label>
+								<input type="text" class="form-control" name="materno" id="exampleInputEmail1" aria-describedby="Apellido Materno">
+							  </div>
+							  <div class="mb-3">
+								<label for="exampleFormControlTextarea1" class="form-label">Bibliografia</label>
+								<textarea class="form-control" name="bibliografia" id="exampleFormControlTextarea1" rows="3"></textarea>
+							  </div>
+							  <div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Foto</label>
+								<input type="file" class="form-control" name="foto" id="exampleInputEmail1" aria-describedby="Foto">
+							  </div>
+							  <div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Número de documento</label>
+								<input type="text" class="form-control" name="documento" id="exampleInputEmail1" aria-describedby="Número de documento">
+							  </div>
+							  <div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Número de celular</label>
+								<input type="text" class="form-control" name="celular" id="exampleInputEmail1" aria-describedby="Número de celular">
+							  </div>
+							
+							  <div class="mb-3">
+								<label for="categories" class="form-label">Categorias</label>
+								<select class="form-select" name="categoria" aria-label="Default select example">
+									<option selected>Open this select menu</option>
+									<option value="1">Administrador</option>
+									<option value="2">Cliente</option>
+									<option value="3">Vendedor</option>
+								  </select>
+							  </div>
+							<div class="mb-3 form-check">
+							  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+							  <label class="form-check-label" for="exampleCheck1">Check me out</label>
 							</div>
-	
-							<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-								Submit
-							</button>
-						</form>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						  </form>
 					</div>
 	
 					<div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">

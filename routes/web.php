@@ -32,8 +32,8 @@ Route::get('/nueva-ruta', function () {
  
  
  Route::get('/lista-personas', 
- [personacontroller::class ,'listarPersona']);
- 
+ [personacontroller::class ,'listarPersona']
+ )->name('lista-personas');
  
  
  Route::get('/lista-personas/{id_persona}',
@@ -66,3 +66,10 @@ Route::get('/lista-productos/{id_producto}',
  [RegistroProductoWebController::class ,'registroProducto']
  )->name('registro.producto');
  
+ Route::post('/pagina-web/guardar-persona', 
+ [RegistroPersonaWebController::class ,'guardarPersona']
+ )->name('guardar.persona');
+ 
+ Route::post('/pagina-web/guardar-producto', 
+ [RegistroProductoWebController::class ,'guardarProducto']
+ )->name('guardar.producto');
