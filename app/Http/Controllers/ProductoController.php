@@ -8,7 +8,7 @@ use App\Models\Producto;
 
 class ProductoController extends Controller
 {
-   //Código para hacer conexion con la base de datos creada, especificamente con la tabla productos
+   //Código para hacer conexion con la base de datos creada, especificamente con la tabla productoss
    public function listarProducto(){
      //alert()->success('Exitoso')->toToast();
      $productos = Producto::all();
