@@ -41,7 +41,8 @@ Route::get('/nueva-ruta', function () {
  )->name('mostrar-persona');
 
  Route::get('/lista-productos', 
- [productocontroller::class ,'listarProducto']);
+ [productocontroller::class ,'listarProducto']
+)->name('lista-productos');
 
 
 Route::get('/lista-productos/{id_producto}',
@@ -73,3 +74,7 @@ Route::get('/lista-productos/{id_producto}',
  Route::post('/pagina-web/guardar-producto', 
  [RegistroProductoWebController::class ,'guardarProducto']
  )->name('guardar.producto');
+
+ Route::delete('/pagina-web/eliminar-personas/{id_persona}',
+ [PersonaController::class, 'eliminarPersona']
+ )->name('eliminar.personas');

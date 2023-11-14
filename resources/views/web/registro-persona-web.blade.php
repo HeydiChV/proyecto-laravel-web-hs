@@ -35,8 +35,18 @@
 								<textarea class="form-control" name="bibliografia" id="exampleFormControlTextarea1" rows="3"></textarea>
 							  </div>
 							  <div class="mb-3">
-								<label for="exampleInputEmail1" class="form-label">Foto</label>
-								<input type="file" class="form-control" name="foto" id="exampleInputEmail1" aria-describedby="Foto">
+								<div class="row">
+									<div class="col-md-9">
+										<label for="exampleInputEmail1" class="form-label">Foto</label>
+								<input type="file" class="form-control" name="foto" id="input" aria-describedby="Foto">
+									</div>
+									<div class="col-md-3">
+										<div>
+											<img src="" alt="" id="img" height="100">
+										  </div>
+										</div>
+
+								</div>
 							  </div>
 							  <div class="mb-3">
 								<label for="exampleInputEmail1" class="form-label">Número de documento</label>
@@ -115,6 +125,17 @@
 					</div>
 				</div>
 			</div>
+			<script>
+let img = document.getElementById('img');
+let input = document.getElementById('input');
+
+input.onchange = (e) => {
+  if(input.files[0])
+    img.src = URL.createObjectURL(input.files[0]);
+}
+
+
+			</script>
 		</section>	
 
 @endsection

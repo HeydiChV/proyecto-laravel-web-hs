@@ -24,5 +24,14 @@ class PersonaController extends Controller
    public function mostrarPersona(Request $request, $id_persona){
      return view('mostrar-persona', compact('id_persona'));
   }
+  public function eliminarPersona(Request $request, $id_persona){
+
+    $persona = Persona::find($id_persona);
+    $persona->delete();
+
+    return redirect()
+    ->route('lista-personas')
+    ->with('mensaje', 'Persona eliminada correctamente');
+}
 }
 

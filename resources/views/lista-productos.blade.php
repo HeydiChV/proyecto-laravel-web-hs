@@ -10,9 +10,48 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
     <div class="container">
         <h1>Lista Productos</h1>
-        <p>Ofrecen gran variedad de productos que solo ellos traen. Así que si un cliente desea ese determinado producto. Crear un buen clima laboral. Bonificaciones a los empleados, reuniones constantes, premios al mejor trabajador.</p>
+        
+        <a type="button" href= "{{ route('registro.producto') }}" class= "btn btn-primary">Registrar nuevo producto</a>
+
         @foreach($productos as $producto)
         <p>{{$producto['nombre'] }} // {{$producto['marca'] }} // {{$producto['categoria'] }} </p>
 
@@ -42,7 +81,8 @@
                     <td>{{$producto['marca'] }}</td>
                     <td>{{$producto['categoria'] }}</td>
                     <td>{{$producto['descripcion'] }}</td>
-                    <td style="text-align:center"><img style="height:55px;" src="{{$producto['imagen'] }}" alt="Foto de persona"></td>
+
+                    <td style="text-align:center"><img style="height:55px;" src="{{asset('storage/'.$producto['imagen']) }}" alt="Foto de producto"></td>
                     <td>{{$producto['precio'] }}</td>
                     <td>{{$producto['stock'] }}</td>
                     <td>{{$producto['fechaRegistro'] }}</td>
