@@ -53,6 +53,8 @@
 
         <a type="button" href= "{{ route('registro.persona') }}" class= "btn btn-primary">Registrar nueva persona</a>
 
+        <a type="button" target="_blank" href= "{{ route('pdf.personas') }}" class= "btn btn-info">Exportar PDF</a>
+
         @foreach($personas as $persona)
         <p>{{$persona['nombres'] }} {{$persona['paterno'] }} {{$persona['materno'] }} </p>
 
@@ -82,8 +84,6 @@
                     <td>{{$persona['documento'] }}</td>
                     <td>{{$persona['celular'] }}</td>
                     <td style="text-align:center"><img style="height:55px;" src="{{asset('storage/'.$persona['foto']) }}" alt="Foto de persona"></td>
-
-
 
 
 
