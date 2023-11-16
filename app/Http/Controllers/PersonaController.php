@@ -15,7 +15,7 @@ class PersonaController extends Controller
    public function listarPersona(){
     $mensaje = session('mensaje');
     if($mensaje){
-      //sweet::alert()->success('Exitoso')->toToast();
+      alert()->success('Operación exitosa!!!', $mensaje)->toToast();
     }
      $personas = Persona::all();
      //alert()->success('Exitoso')->toToast();
