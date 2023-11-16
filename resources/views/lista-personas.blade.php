@@ -87,13 +87,13 @@
 
 
 
-                    <td class="" style="text-align:center">
-                        <a href="{{ route('mostrar-persona', $persona['personaID']) }}" type="button" class="btn-success">Detalles</a>
-                        <a type="button" class="btn btn-primary">Editar</a>
+                    <td class="d-flex" style="text-align:center">
+                        <a href="{{ route('mostrar.persona', $persona['personaID']) }}" type="button" class="btn btn-success">Detalles</a>
+                        <a href="{{ route('editar.persona', $persona['personaID']) }}" type="button" class="btn btn-primary">Editar</a>
                         <form action="{{route('eliminar.personas', $persona ['personaID'])}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class= "btn-success">Eliminar</button>
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
                           </form>
                     
                     </td>

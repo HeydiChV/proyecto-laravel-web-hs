@@ -38,20 +38,39 @@ Route::get('/nueva-ruta', function () {
  )->name('lista-personas');
  
  
- Route::get('/lista-personas/{id_persona}',
+ Route::get('/mostrar-personas/{id_persona}',
  [personacontroller::class, 'mostrarPersona']
- )->name('mostrar-persona');
+ )->name('mostrar.persona');
 
  Route::get('/lista-productos', 
  [productocontroller::class ,'listarProducto']
 )->name('lista-productos');
 
 
-Route::get('/lista-productos/{id_producto}',
+Route::get('/mostrar-productos/{id_producto}',
  [productocontroller::class, 'mostrarProducto']
- )->name('mostrar-producto');
+ )->name('mostrar.producto');
 
- 
+ Route::get('/editar-personas/{id_persona}',
+ [personacontroller::class, 'editarPersona']
+ )->name('editar.persona');
+
+
+ Route::get('/editar-personas/{id_persona}',
+ [Personacontroller::class, 'editarPersona']
+ )->name('editar.persona');
+
+ Route::put('/actualizar-persona/{id_persona}', 
+ [Personacontroller::class ,'actualizarPersona']
+ )->name('actualizar.persona');
+
+ Route::get('/editar-productos/{id_producto}',
+ [productocontroller::class, 'editarProducto']
+ )->name('editar.producto');
+
+ Route::put('/actualizar-producto/{id_producto}', 
+ [productocontroller::class ,'actualizarProducto']
+ )->name('actualizar.producto');
 
  //-------------------------------------------------------------------------------------------------------------------
  //Página Web
@@ -80,6 +99,10 @@ Route::get('/lista-productos/{id_producto}',
  Route::delete('/pagina-web/eliminar-personas/{id_persona}',
  [PersonaController::class, 'eliminarPersona']
  )->name('eliminar.personas');
+
+ Route::delete('/pagina-web/eliminar-productos/{id_producto}',
+ [PersonaController::class, 'eliminarProducto']
+ )->name('eliminar.productos');
 
  Route::get('/pdf-personas', 
  [PdfController::class, 'exportarPdfPersonas']

@@ -52,6 +52,8 @@
         
         <a type="button" href= "{{ route('registro.producto') }}" class= "btn btn-primary">Registrar nuevo producto</a>
 
+        <a type="button" target="_blank" href= "{{ route('pdf.personas') }}" class= "btn btn-info">Exportar PDF</a>
+
         @foreach($productos as $producto)
         <p>{{$producto['nombre'] }} // {{$producto['marca'] }} // {{$producto['categoria'] }} </p>
 
@@ -87,9 +89,9 @@
                     <td>{{$producto['stock'] }}</td>
                     <td>{{$producto['fechaRegistro'] }}</td>
                     <td class="" style="text-align:center">
-                        <a href="{{ route('mostrar-producto', $producto['productoID']) }}" type="button" class="btn btn-success">Detalles</a>
-                        <a type="button" class="btn btn-primary">Editar</a>
-                        <a type="button" class="btn btn-danger">Eliminar</a>
+                        <a href="{{ route('mostrar.producto', $producto['productoID']) }}" type="button" class="btn btn-success">Detalles</a>
+                        <a href="{{ route('editar.producto', $producto['productoID']) }}" type="button" class="btn btn-primary">Editar</a>
+                        
                     
                     </td>
                 </tr>
