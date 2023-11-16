@@ -18,8 +18,8 @@ class ComputadoraFactory extends Factory
     public function definition(): array
     {
         return [
-            'marca' => $this->fake()->name(),
-            'descripcion' => $this->fake()->name(),
+            'marca' => $this->make()->name(),
+            'descripcion' => $this->make()->name(),
         ];
     }
 }
