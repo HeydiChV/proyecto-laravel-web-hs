@@ -168,14 +168,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-<<<<<<< HEAD
-       
-=======
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
-        
->>>>>>> 24e9ecfa8512318ee639a7ced33ef6fcdfae4d85
     ])->toArray(),
-
     /*
     |--------------------------------------------------------------------------
     | Class Aliases
@@ -189,11 +183,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
-<<<<<<< HEAD
-       
-=======
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
->>>>>>> 24e9ecfa8512318ee639a7ced33ef6fcdfae4d85
     ])->toArray(),
 
 ];

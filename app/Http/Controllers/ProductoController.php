@@ -24,7 +24,7 @@ class ProductoController extends Controller
 
     return redirect()
     ->route('lista-productos')
-    ->with('mensaje', 'Producto eliminada correctamente');
+    ->with('mensaje', 'Producto eliminado correctamente');
 }
 public function editarProducto(Request $request, $id_producto){
 

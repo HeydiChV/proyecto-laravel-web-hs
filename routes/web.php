@@ -101,7 +101,7 @@ Route::get('/mostrar-productos/{id_producto}',
  )->name('eliminar.personas');
 
  Route::delete('/pagina-web/eliminar-productos/{id_producto}',
- [PersonaController::class, 'eliminarProducto']
+ [ProductoController::class, 'eliminarProducto']
  )->name('eliminar.productos');
 
  Route::get('/pdf-personas', 

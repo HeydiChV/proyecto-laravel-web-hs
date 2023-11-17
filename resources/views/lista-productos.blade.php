@@ -88,10 +88,14 @@
                     <td>{{$producto['precio'] }}</td>
                     <td>{{$producto['stock'] }}</td>
                     <td>{{$producto['fechaRegistro'] }}</td>
-                    <td class="" style="text-align:center">
+                    <td class="d-flex" style="text-align:center">
                         <a href="{{ route('mostrar.producto', $producto['productoID']) }}" type="button" class="btn btn-success">Detalles</a>
                         <a href="{{ route('editar.producto', $producto['productoID']) }}" type="button" class="btn btn-primary">Editar</a>
-                        
+                        <form action="{{route('eliminar.productos', $producto ['productoID'])}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                          </form>
                     
                     </td>
                 </tr>
